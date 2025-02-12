@@ -3,10 +3,11 @@ import React from 'react';
 import DepartmentChart from '../components/DepartmentChart';
 import DepartmentCard from '../components/DepartmentCard';
 import { ArrowLeft } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const Detail = () => {
   const navigate = useNavigate();
+  const { departmentId } = useParams();
   
   const departments = [
     {
@@ -71,20 +72,29 @@ const Detail = () => {
     }
   ];
 
+  // If we have a departmentId, find that department
+  const selectedDepartment = departmentId 
+    ? departments.find(dept => dept.id === departmentId)
+    : null;
+
   return (
     <div className="min-h-screen bg-[#1A1F2C] p-8">
       <div className="max-w-7xl mx-auto">
         <button 
-          onClick={() => navigate('/')}
+          onClick={() => navigate('/detail')}
           className="flex items-center text-gray-400 hover:text-white mb-8"
         >
           <ArrowLeft className="mr-2" size={20} />
-          Back to Overview
+          Back to Departments
         </button>
         
         <header className="mb-8">
-          <h1 className="text-4xl font-bold mb-2">Level 2</h1>
-          <p className="text-gray-400">6 Departments</p>
+          <h1 className="text-4xl font-bold mb-2">
+            {selectedDepartment ? selectedDepartment.name : 'Level 2'}
+          </h1>
+          <p className="text-gray-400">
+            {selectedDepartment ? 'Department Details' : '6 Departments'}
+          </p>
         </header>
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">

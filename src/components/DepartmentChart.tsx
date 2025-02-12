@@ -1,6 +1,7 @@
 
 import React, { useMemo } from 'react';
 import ReactECharts from 'echarts-for-react';
+import { useNavigate } from 'react-router-dom';
 
 interface Department {
   id: string;
@@ -18,6 +19,8 @@ interface DepartmentChartProps {
 }
 
 const DepartmentChart = ({ departments }: DepartmentChartProps) => {
+  const navigate = useNavigate();
+
   // Generate scatter points for the overlay effect
   const generateScatterData = (count: number) => {
     const data = [];
@@ -31,6 +34,12 @@ const DepartmentChart = ({ departments }: DepartmentChartProps) => {
       ]);
     }
     return data;
+  };
+
+  const onChartClick = (params: any) => {
+    if (params.data && params.data.id) {
+      navigate(`/detail/${params.data.id}`);
+    }
   };
 
   const options = useMemo(() => ({
@@ -153,6 +162,9 @@ const DepartmentChart = ({ departments }: DepartmentChartProps) => {
       <ReactECharts
         option={options}
         style={{ height: '600px', width: '100%' }}
+        onEvents={{
+          click: onChartClick
+        }}
       />
     </div>
   );

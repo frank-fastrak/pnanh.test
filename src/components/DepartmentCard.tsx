@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface Department {
   id: string;
@@ -17,8 +18,13 @@ interface DepartmentCardProps {
 }
 
 const DepartmentCard = ({ department }: DepartmentCardProps) => {
+  const navigate = useNavigate();
+
   return (
-    <div className="glass-card p-4">
+    <div 
+      className="glass-card p-4 cursor-pointer hover:bg-white/5 transition-colors"
+      onClick={() => navigate(`/detail/${department.id}`)}
+    >
       <div className="flex items-center mb-4">
         <div 
           className="w-8 h-8 rounded flex items-center justify-center text-sm font-medium"
