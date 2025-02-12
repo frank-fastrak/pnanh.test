@@ -92,7 +92,7 @@ const Detail = () => {
             <DepartmentChart departments={departments} />
           </div>
           
-          <div className="space-y-4">
+          <div className="grid grid-cols-2 gap-4 content-start">
             {departments.map((dept) => (
               <DepartmentCard key={dept.id} department={dept} />
             ))}
