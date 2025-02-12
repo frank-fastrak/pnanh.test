@@ -4,8 +4,11 @@ import MetricCard from '../components/MetricCard';
 import ProgressBar from '../components/ProgressBar';
 import ParticleChart from '../components/ParticleChart';
 import { ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Index = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-[#1A1F2C] p-8">
       <div className="max-w-7xl mx-auto">
@@ -55,7 +58,10 @@ const Index = () => {
                 </div>
               </div>
               
-              <button className="flex items-center justify-center w-full py-3 mt-4 glass-card hover:bg-white/5 transition-colors">
+              <button 
+                onClick={() => navigate('/detail')}
+                className="flex items-center justify-center w-full py-3 mt-4 glass-card hover:bg-white/5 transition-colors"
+              >
                 <span className="mr-2">View Details</span>
                 <ArrowRight size={16} />
               </button>
