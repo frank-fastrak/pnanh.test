@@ -27,7 +27,7 @@ const DepartmentDetail = () => {
           className="flex items-center text-gray-400 hover:text-white mb-8 transition-colors"
         >
           <ArrowLeft className="mr-2" size={20} />
-          Back to Department
+          Back to Departments
         </button>
         
         <header className="mb-8">

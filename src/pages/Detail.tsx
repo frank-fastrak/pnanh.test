@@ -85,7 +85,7 @@ const Detail = () => {
           className="flex items-center text-gray-400 hover:text-white mb-8"
         >
           <ArrowLeft className="mr-2" size={20} />
-          Back to Departments
+          Back to Overview
         </button>
         
         <header className="mb-8">
