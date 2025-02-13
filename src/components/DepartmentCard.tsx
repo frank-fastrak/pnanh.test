@@ -23,7 +23,7 @@ const DepartmentCard = ({ department }: DepartmentCardProps) => {
   return (
     <div 
       className="glass-card p-4 cursor-pointer hover:bg-white/5 transition-colors"
-      onClick={() => navigate(`/detail/${department.id}`)}
+      onClick={() => navigate(`/department/${department.id}`)}
     >
       <div className="flex items-center mb-4">
         <div 

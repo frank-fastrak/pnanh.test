@@ -261,7 +261,7 @@ const DepartmentChart = ({ departments }: DepartmentChartProps) => {
         onEvents={{
           click: (params) => {
             if (!selectedDepartment && params.data?.id) {
-              navigate(`/detail/${params.data.id}`);
+              navigate(`/department/${params.data.id}`);
             }
           }
         }}
