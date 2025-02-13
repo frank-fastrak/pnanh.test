@@ -81,7 +81,7 @@ const Detail = () => {
     <div className="min-h-screen bg-[#1A1F2C] p-8">
       <div className="max-w-7xl mx-auto">
         <button 
-          onClick={() => navigate('/detail')}
+          onClick={() => navigate('/')}
           className="flex items-center text-gray-400 hover:text-white mb-8"
         >
           <ArrowLeft className="mr-2" size={20} />
