@@ -23,11 +23,11 @@ const DepartmentDetail = () => {
     <div className="min-h-screen bg-[#1A1F2C] p-8">
       <div className="max-w-7xl mx-auto">
         <button 
-          onClick={() => navigate('/detail')}
+          onClick={() => navigate('/')}
           className="flex items-center text-gray-400 hover:text-white mb-8 transition-colors"
         >
           <ArrowLeft className="mr-2" size={20} />
-          Back to Departments
+          Back to Overview
         </button>
         
         <header className="mb-8">
