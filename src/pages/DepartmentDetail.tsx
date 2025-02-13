@@ -1,12 +1,13 @@
-
 import React from 'react';
 import ReactECharts from 'echarts-for-react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import MetricCard from '../components/MetricCard';
 import ProgressBar from '../components/ProgressBar';
+import { ArrowLeft } from 'lucide-react';
 
 const DepartmentDetail = () => {
   const { departmentId } = useParams();
+  const navigate = useNavigate();
 
   // Mock data - in a real app, this would come from an API
   const departmentData = {
@@ -197,6 +198,14 @@ const DepartmentDetail = () => {
   return (
     <div className="min-h-screen bg-[#1A1F2C] p-8">
       <div className="max-w-7xl mx-auto">
+        <button 
+          onClick={() => navigate('/detail')}
+          className="flex items-center text-gray-400 hover:text-white mb-8 transition-colors"
+        >
+          <ArrowLeft className="mr-2" size={20} />
+          Back to Departments
+        </button>
+        
         <header className="mb-8">
           <h1 className="text-4xl font-bold text-white">Department Dashboard</h1>
           <div className="flex justify-between items-center mt-4">
