@@ -3,7 +3,7 @@ import React from 'react';
 import DepartmentChart from '../components/DepartmentChart';
 import DepartmentCard from '../components/DepartmentCard';
 import { ArrowLeft } from 'lucide-react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from "react-router-dom";
 
 const Detail = () => {
   const navigate = useNavigate();
