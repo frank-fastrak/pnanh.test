@@ -18,7 +18,7 @@ const Detail = () => {
       chiefOfficer: 'Paul Dickson',
       chiefTitle: 'Chief Revenue Officer',
       directReports: 15,
-      color: '#FF9B7B'
+      color: '#FF9B7b'
     },
     {
       id: '02',
